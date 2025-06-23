@@ -12,7 +12,7 @@ const data=[
 ["Tester","This is only given to users who test the game."],
 ["Staff","This is only given to staff members."],
 ["Plus","This is only given to users who have purchased Plus."],
-["6 Month Veteran","Given to those who have been members of Blacket as a whole for 6 months."],
+["6 Month Veteran","Given to those who have been members of Blacket as a whole for 6 months."], 
 ["12 Month Veteran","Given to those who have been members of Blacket as a whole for 1 year."],
 ["18 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 1 and a half years."],
 ["24 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 2 years."],
@@ -23,6 +23,7 @@ const data=[
 ["Partner","This is for the partners of Blacket."],
 ["Verified","This is only given to trusted members and known members."],
 ["beanTroll","This is a very exclusive badge. You must praise Bean always.","/content/emojis/beanTroll.webp"],
+["Mummy Ankha","GoogleChroma is the goat.","/content/blooks/Mummy%20Ankha.webp"],
 ["Blacktuber","This is only given to people who create videos about Blacket on YouTube and have over 500 subscribers."]
 ].map(([id,desc=`This is only given to ${id}.`,img=`/content/badges/${id}.webp`])=>({id,name:id,imageUrl:img,description:desc}));
 
@@ -72,7 +73,7 @@ data.forEach(b=>{
   c.appendChild(d);
 });
 
-alert("Congrats! All badges applied in Blacket.");
+alert("Congrats! You are a decorated player and have gotten all the badges in Blacket!!");
 }catch(e){console.error("Error injecting badges:",e);alert("Failed to update badges.");}
 })();
 
