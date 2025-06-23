@@ -1,3 +1,3 @@
 # Blacket-Scripts
 Some blacket scripts for anyone who wants to use them.
-Made by GoogleChroma with help from Splash88.
+Made by GoogleChroma with and Splash88.
