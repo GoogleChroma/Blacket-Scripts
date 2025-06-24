@@ -1,0 +1,82 @@
+javascript:(()=>{try{
+const data=[
+["OG","This is only given to OG members of Blacket. This is before the date of 09/01/2022."],
+["Big Spender","This is only given to users who have donated a lot to Blacket."],
+["Big Spender V","This is only given to users who have donated over $1,000 to Blacket! Highest tier of Big Spender! HUGE thanks to:\n- VenomVenom\n- Brendan"],
+["Developer","This is only given to users who have developed and tested the game."],
+["Verified Bot","This is only given to bots that have been verified by owners or developers."],
+["Legacy Ankh","This was only given to people who impressed Ankha in many ways. This badge is no longer obtainable."],
+["Artist","This is only given to artists who created the art for Blacket."],
+["Co-Owner","This is only given to the co-owners."],
+["Booster","This is only given to people who boosted the Blacket Discord server."],
+["Tester","This is only given to users who test the game."],
+["Staff","This is only given to staff members."],
+["Plus","This is only given to users who have purchased Plus."],
+["6 Month Veteran","Given to those who have been members of Blacket as a whole for 6 months."], 
+["12 Month Veteran","Given to those who have been members of Blacket as a whole for 1 year."],
+["18 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 1 and a half years."],
+["24 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 2 years."],
+["30 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 2 and a half years."],
+["36 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 3 years."],
+["42 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 3 and a half years."],
+["48 Month Veteran","This is only given to people who have been a member of Blacket as a whole for 4 years."],
+["Partner","This is for the partners of Blacket."],
+["Verified","This is only given to trusted members and known members."],
+["beanTroll","This is a very exclusive badge. You must praise Bean always.","/content/emojis/beanTroll.webp"],
+["Google","GoogleChroma is the goat.","/content/blooks/Mummy%20Ankha.webp"],
+["Splash88","Splash88 is almost as goated as Google.","/content/blooks/Festive%20Xotic.webp"],
+["Purple","Purple is almost as goated as Google.","/content/blooks/Purple%20Blook.webp"],
+["Blacktuber","This is only given to people who create videos about Blacket on YouTube and have over 500 subscribers."]
+].map(([id,desc=`This is only given to ${id}.`,img=`/content/badges/${id}.webp`])=>({id,name:id,imageUrl:img,description:desc}));
+
+localStorage.setItem("badges",JSON.stringify(data));
+
+const c=document.querySelector(".styles__headerBadges___ffKa4-camelCase");
+if(!c)return alert("Badge container not found.");
+
+c.innerHTML="";
+const bg=document.createElement("div");
+bg.className="styles__headerBadgeBg___12ogR-camelCase";
+c.appendChild(bg);
+
+data.forEach(b=>{
+  const d=document.createElement("div");
+  d.id=b.id;
+  d.style="display:inline-block;cursor:pointer;margin-right:0.104vw";
+
+  const i=document.createElement("img");
+  i.loading="lazy";
+  i.src=b.imageUrl;
+  i.style="width:1.563vw;display:inline-block;margin-left:0.130vw;z-index:1;position:relative";
+  d.appendChild(i);
+
+  d.onclick=()=>{document.body.insertAdjacentHTML("beforeend",`
+    <div class="arts__modal___VpEAD-camelCase">
+      <form class="styles__container___1BPm9-camelCase">
+        <div class="styles__text___KSL4--camelCase">
+          <div>${b.name} Badge<br><br>${b.description.replace(/\n/g,"<br>")}</div>
+        </div>
+        <div class="styles__holder___3CEfN-camelCase">
+          <div class="styles__buttonContainer___2EaVD-camelCase">
+            <div id="closeButton" class="styles__button___1_E-G-camelCase styles__button___3zpwV-camelCase" role="button" tabindex="0">
+              <div class="styles__shadow___3GMdH-camelCase"></div>
+              <div class="styles__edge___3eWfq-camelCase" style="background-color:var(--accent);"></div>
+              <div class="styles__front___vcvuy-camelCase styles__buttonInside___39vdp-camelCase" style="background-color:var(--accent);">Okay</div>
+            </div>
+          </div>
+        </div>
+        <input type="submit" style="opacity:0;display:none;">
+      </form>
+    </div>`);
+
+    document.getElementById("closeButton").onclick=()=>document.querySelector(".arts__modal___VpEAD-camelCase").remove();
+  };
+
+  c.appendChild(d);
+});
+
+alert("Congrats! You are a decorated player and have gotten all the badges in Blacket!!");
+}catch(e){console.error("Error injecting badges:",e);alert("Failed to update badges.");}
+})();
+
+
