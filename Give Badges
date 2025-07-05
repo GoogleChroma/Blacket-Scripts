@@ -26,6 +26,7 @@ const data=[
 ["Google","GoogleChroma is the goat.","/content/blooks/Mummy%20Ankha.webp"],
 ["Splash88","Splash88 is almost as goated as Google.","/content/blooks/Festive%20Xotic.webp"],
 ["Blacktuber","This is only given to people who create videos about Blacket on YouTube and have over 500 subscribers."]
+["Mixer","This is only given to artists who created the sounds / music for Blacket."]
 ].map(([id,desc=`This is only given to ${id}.`,img=`/content/badges/${id}.webp`])=>({id,name:id,imageUrl:img,description:desc}));
 
 localStorage.setItem("badges",JSON.stringify(data));
