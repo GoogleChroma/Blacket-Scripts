@@ -1,6 +1,8 @@
 (() => {
+    // Check if the current path does not start with "/blooks"
     if (!location.pathname.startsWith("/blooks")) {
-        alert("Go to the Blooks page first.");
+        // Redirect to blacket.org/blooks
+        window.location.href = "https://blacket.org/blooks";
         return;
     }
 
