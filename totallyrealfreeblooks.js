@@ -6,28 +6,3 @@ images[i].src = imgURL;
 }
 })(); 
 //paste onto blooks page for free blooks trust
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//this is a remake of a script xotic made btw its 100% legal
